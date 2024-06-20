@@ -1,7 +1,9 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
+var __importDefault =
+  (this && this.__importDefault) ||
+  function (mod) {
+    return mod && mod.__esModule ? mod : { default: mod };
+  };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const dotenv_1 = __importDefault(require("dotenv"));
@@ -17,16 +19,16 @@ app.use(express_1.default.json());
 app.use((0, cors_1.default)());
 // Connect to MongoDB
 mongoose_1.default
-    .connect(process.env.DB_URL, {})
-    .then(() => console.log("Connected to MongoDB..."))
-    .catch((err) => console.error("Could not connect to MongoDB...", err));
+  .connect(process.env.DB_URL, {})
+  .then(() => console.log("Connected to MongoDB..."))
+  .catch((err) => console.error("Could not connect to MongoDB...", err));
 // Use the userRouter for handling user-related routes
 app.use("/api/users", Users_1.default);
 app.use("/api/auth", auth_1.default);
 app.use("/card", Cards_1.default);
 app.use("/employees", employees_1.default);
 app.get("/", (req, res) => {
-    res.json("hllo");
+  res.json("heello");
 });
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
