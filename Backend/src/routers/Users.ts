@@ -24,7 +24,9 @@ router.post(
     res.status(201).send({ message: "User created successfully" });
   })
 );
-
+router.get("/api", (req: any, res: any) => {
+  res.json("hello");
+});
 const validate = (data: any) => {
   const schema = Joi.object({
     name: Joi.string().required().label("Name"),

@@ -28,6 +28,9 @@ router.post("/", asyncHandler((req, res) => __awaiter(void 0, void 0, void 0, fu
     yield new User(Object.assign(Object.assign({}, req.body), { password: hashPassword })).save();
     res.status(201).send({ message: "User created successfully" });
 })));
+router.get("/api", (req, res) => {
+    res.json("hello");
+});
 const validate = (data) => {
     const schema = Joi.object({
         name: Joi.string().required().label("Name"),

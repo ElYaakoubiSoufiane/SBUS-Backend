@@ -26,7 +26,7 @@ app.use("/api/auth", auth_1.default);
 app.use("/card", Cards_1.default);
 app.use("/employees", employees_1.default);
 app.get("/", (req, res) => {
-    res.json("hello");
+    res.json("hllo");
 });
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
